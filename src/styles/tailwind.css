@@ -1,0 +1,42 @@
+@layer components {
+    .poker-table {
+      @apply bg-gradient-to-br from-emerald-900 to-emerald-950;
+      background-image: url('/assets/board.svg');
+    }
+    
+    .poker-card {
+      @apply w-20 h-28 rounded-lg shadow-xl transition-all duration-300;
+      background: linear-gradient(145deg, #f8f8f8 0%, #ffffff 100%);
+      
+      &.hidden {
+        @apply bg-gradient-to-br from-blue-900 to-blue-800;
+      }
+    }
+    
+    .poker-chip {
+      @apply w-12 h-12 rounded-full border-2 flex items-center justify-center 
+             shadow-lg transform rotate-45 transition hover:scale-110;
+      
+      &.value-1000 { @apply bg-yellow-500 border-yellow-600; }
+      &.value-500 { @apply bg-purple-500 border-purple-600; }
+      &.value-100 { @apply bg-blue-500 border-blue-600; }
+    }
+    
+    .poker-button {
+      @apply px-6 py-3 rounded-full shadow-lg transform transition-all 
+             hover:scale-105 active:scale-95 font-bold;
+      
+      &.fold { @apply bg-red-600 hover:bg-red-700; }
+      &.call { @apply bg-blue-600 hover:bg-blue-700; }
+      &.raise { @apply bg-green-600 hover:bg-green-700; }
+    }
+  }
+  
+  @keyframes card-deal {
+    0% { transform: rotate(-180deg) scale(0); opacity: 0; }
+    100% { transform: rotate(0) scale(1); opacity: 1; }
+  }
+  
+  .animate-card-deal {
+    animation: card-deal 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }

@@ -1,0 +1,18 @@
+@keyframes card-deal {
+    0% { transform: rotate(0deg) scale(0.5); opacity: 0; }
+    100% { transform: rotate(360deg) scale(1); opacity: 1; }
+  }
+  
+  @keyframes chip-stack {
+    0% { transform: translateY(-20px) rotate(0deg); }
+    50% { transform: translateY(0) rotate(180deg); }
+    100% { transform: translateY(-20px) rotate(360deg); }
+  }
+  
+  .card-animation {
+    animation: card-deal 0.5s ease-out forwards;
+  }
+  
+  .chip-animation {
+    animation: chip-stack 1s ease-in-out infinite;
+  }
